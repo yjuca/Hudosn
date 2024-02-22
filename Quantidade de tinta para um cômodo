@@ -1,0 +1,39 @@
+import math
+print('Quantidade de tinta pra printa um comodo')
+larguradaparede1 = float(input('Qual é a largura da primeira parede: m'))
+alturadaparede1 = float(input('Qual é a altura da primeira parede: m'))
+larguradaparede2 = float(input('Qual é a largura da segunda parede: m'))
+alturadaparede2 = float(input('Qual é a altura da segunda parede: m'))
+larguradaparede3 = float(input('Qual é a largura da terceira parede: m'))
+alturadaparede3 = float(input('Qual é a altura da terceira parede: m'))
+larguradaparede4 = float(input('Qual é a largura da quarta parede: m'))
+alturadaparede4 = float(input('Qual é a altura da quarta parede: m'))
+teto1 = float(input('Qual é a largura do teto: m'))
+teto2 = float(input('Qual é o comprimento do teto: m'))
+portaaltura = float(input('Qual é a altura da porta: m'))
+portalargura = float(input('Qual é a largura da porta: m'))
+alturadajanela1 = float(input('Qual é a altura da janela: m'))
+larguradajanela1 = float(input('Qual é a largura da janela: m'))
+areadaprimera = larguradaparede1 * alturadaparede1
+areadasegunda = larguradaparede2 * alturadaparede2
+areadaterceira = larguradaparede3 * alturadaparede3
+areadaquarta = larguradaparede4 * alturadaparede4
+areadoteto = teto1 * teto2
+areadajanela =alturadajanela1 * larguradajanela1
+areadaporta = portaaltura * portalargura
+totaldearea = areadaprimera + areadasegunda + areadaterceira + areadaquarta +areadoteto - areadaporta - areadajanela
+print('A area total vai ser de {:.2f}m²'.format(totaldearea))
+quantidadedetintaemlitros = totaldearea /10
+print('Voce ira precisa de {:.2f}litros de tinta '.format(quantidadedetintaemlitros))
+latapequenaemmetro = 900 / 1000
+valoremlatapequenadetinta = quantidadedetintaemlitros / latapequenaemmetro
+valoremgalão = quantidadedetintaemlitros /3.6
+from math import ceil
+valoraredondadodalatapequenadetinta =math.ceil(valoremlatapequenadetinta)
+valoraredondadodogalão =math.ceil(valoremgalão)
+print('A quantidade da latapequena:{}\nA quantidade do galão:{}'.format(math.ceil(valoremlatapequenadetinta),math.ceil(valoremgalão)))
+valordatintalatapequena =float(input('Qual o valor da lata pequena de tinta R$'))
+valordogalão = float(input('Qual o valor do galão de tinta R$ '))
+preçodalatinha = valoraredondadodalatapequenadetinta * valordatintalatapequena
+preçodogalão = valoraredondadodogalão * valordogalão
+print ('Valor da lata pequana de 900 ml {:.2f} R$\nValor de galão de 3,6 l {:.2f} R$'.format(preçodalatinha,preçodogalão))
